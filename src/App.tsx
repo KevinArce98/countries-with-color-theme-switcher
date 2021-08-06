@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from '@material-ui/styles';
+import './assets/css/all.min.css';
+import './assets/css/general.css';
+import './assets/css/tailwind.output.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Components
+import Header from './components/Header';
+
+// Config
+import theme from './config/theme';
+
+const App = () => {
+	return (
+		<ThemeProvider theme={theme}>
+			<Header />
+			<i className="fab fa-whatsapp" style={{ width: 250, height: 250, fontSize: 250 }}></i>
+		</ThemeProvider>
+	)
 }
 
-export default App;
+export default App
