@@ -74,6 +74,34 @@
 }
 
 
-.header .title{
+.header .title {
     flex-grow: 1;
+}
+
+.header .MuiButton-label {
+    font-weight: 600;
+}
+
+.MuiButton-label {
+    text-transform: capitalize;
+}
+
+.MuiGrid-spacing-xs-8 {
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.MuiGrid-spacing-xs-2 {
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.details .title {
+    font-weight: bold !important;
+    margin-bottom: 25px;
+    margin-top: 15px;
+}
+
+.details .subtitle {
+    margin-bottom: 8px;
 }
