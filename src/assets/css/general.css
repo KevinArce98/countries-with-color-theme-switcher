@@ -76,6 +76,7 @@
 
 .header .title {
     flex-grow: 1;
+    font-weight: 600;
 }
 
 .header .MuiButton-label {
@@ -104,4 +105,56 @@
 
 .details .subtitle {
     margin-bottom: 8px;
+}
+
+.dark-mode {
+    background-color: rgb(32, 44, 55);
+}
+
+.dark-mode .header {
+    background-color: rgb(43, 57, 69);
+    color: #fff;
+}
+
+.dark-mode .header .switch {    
+    color: #fff;
+}
+
+.dark-mode .MuiInputBase-root {    
+    color: #fff;
+    background-color: rgb(43, 57, 69);
+}
+
+.dark-mode .MuiFormLabel-root {
+    color: #fff;
+}
+
+.dark-mode .MuiSelect-icon {
+    color: #fff;
+}
+
+.dark-mode .MuiPaper-root {
+    background-color: rgb(43, 57, 69);
+    color: #fff;
+}
+
+.dark-mode .MuiPaper-root .MuiTypography-root strong {
+    color: #fff;
+}
+
+.dark-mode .MuiPaper-root .MuiTypography-root {
+    color: rgb(212, 212, 212);
+}
+
+.dark-mode .MuiButton-root {
+    background-color: rgb(43, 57, 69);
+    color: #fff;
+}
+
+.dark-mode .MuiTypography-root strong {
+    color: #fff;
+}
+
+.dark-mode .MuiTypography-root {
+    color: rgb(212, 212, 212);
 }
