@@ -36,7 +36,7 @@ const DetailCountry = () => {
     return (
         <Grid container spacing={isMobile ? 8 : 2} className="md:p-16 p-5">
             <Grid item xs={12}>
-                <Link to="/">
+                <Link to="/" aria-label="go to home">
                     <Button variant="contained" color="default">
                         <FontAwesomeIcon type="far" iconName="fa-long-arrow-alt-left" className="mr-2" style={{ fontSize: 20 }} />
                         Back

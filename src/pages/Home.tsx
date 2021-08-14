@@ -4,16 +4,17 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import useTheme from '@material-ui/core/styles/useTheme';
 
 // Components
-import { FormControl, Grid, InputAdornment, InputLabel, MenuItem, Select, TextField } from "@material-ui/core";
+import { Grid, Input, InputAdornment, Paper } from "@material-ui/core";
+import CountryCard from "../components/CountryCard";
+import FontAwesomeIcon from "../components/FontAwesomeIcon";
+import Loading from "../components/Loading";
 
 // Interfaces
 import Country from "../interfaces/Country.interface";
 
 // Services
 import { getAllCountries } from "../services/Country";
-import CountryCard from "../components/CountryCard";
-import FontAwesomeIcon from "../components/FontAwesomeIcon";
-import Loading from "../components/Loading";
+import Filter from "../components/Filter";
 
 
 const Home = () => {
@@ -47,19 +48,20 @@ const Home = () => {
         setIsLoading(true);
         const { value } = e.target;
         setSearchValue(value);
+        const query = value.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
         const countriesFiltered = stateCountries.current.filter(country => {
             if (regionSelected) {
-                return country.name.toLowerCase().includes(value.toLowerCase()) && country.region === regionSelected;
+                return country.name.toLowerCase().includes(query) && country.region === regionSelected;
             }
-            return country.name.toLowerCase().includes(value.toLowerCase());
+            return country.name.toLowerCase().includes(query);
         });
         setCountries(countriesFiltered);
         setIsLoading(false);
     }
 
-    const handleChangeFilterByRegion = (e: React.ChangeEvent<{ name?: string | undefined; value: unknown; }>) => {
+    const handleChangeFilterByRegion = (region: string) => {
         setIsLoading(true);
-        const region: any = e.target.value;
         setRegionSelected(region);
 
         if (region) {
@@ -86,41 +88,27 @@ const Home = () => {
     return (
         <Grid container spacing={isMobile ? 8 : 2} className="md:p-16 p-5">
             <Grid item xs={12} md={6}>
-                <TextField
-                    id="search"
-                    label="Search for a country..."
-                    variant="filled"
-                    fullWidth
-                    onChange={searchingCountries}
-                    value={searchValue}
-                    InputProps={{
-                        startAdornment: (
-                            <InputAdornment position="start">
-                                <FontAwesomeIcon type="fal" iconName="fa-search" />
-                            </InputAdornment>
-                        ),
-                    }}
-                />
+                <Paper>
+                    <Input
+                        placeholder="Search for a country..."
+                        inputProps={{ 'aria-label': 'search' }}
+                        className="px-5 py-3"
+                        fullWidth
+                        onChange={searchingCountries}
+                        value={searchValue}
+                        disableUnderline
+                        startAdornment={
+                            (
+                                <InputAdornment position="start">
+                                    <FontAwesomeIcon type="fal" iconName="fa-search" />
+                                </InputAdornment>
+                            )
+                        }
+                    />
+                </Paper>
             </Grid>
             <Grid item xs={12} md={6} className="md:text-right">
-                <FormControl variant="filled" className="w-44">
-                    <InputLabel id="filter-region-label">Filter by Region</InputLabel>
-                    <Select
-                        labelId="filter-region-label"
-                        id="filter-region"
-                        value={regionSelected}
-                        onChange={handleChangeFilterByRegion}
-                    >
-                        <MenuItem value="">
-                            <em>None</em>
-                        </MenuItem>
-                        <MenuItem value="Africa">Africa</MenuItem>
-                        <MenuItem value="Americas">Americas</MenuItem>
-                        <MenuItem value="Asia">Asia</MenuItem>
-                        <MenuItem value="Europe">Europe</MenuItem>
-                        <MenuItem value="Oceania">Oceania</MenuItem>
-                    </Select>
-                </FormControl>
+                <Filter regionSelected={regionSelected} changeRegion={handleChangeFilterByRegion}/>
             </Grid>
 
             {

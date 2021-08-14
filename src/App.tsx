@@ -19,10 +19,12 @@ const App = () => {
 		<Router>
 			<ThemeProvider theme={theme}>
 				<Layout>
-					<Switch>
-						<Route path="/details/:alphaCode" component={DetailCountry} />
-						<Route path="/" component={Home} />
-					</Switch>
+					<main>
+						<Switch>
+							<Route path="/details/:alphaCode" component={DetailCountry} />
+							<Route path="/" component={Home} />
+						</Switch>
+					</main>
 				</Layout>
 			</ThemeProvider>
 		</Router>
