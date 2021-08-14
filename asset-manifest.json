@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/countries-with-color-theme-switcher/static/css/main.85c10c5b.chunk.css",
+    "main.js": "/countries-with-color-theme-switcher/static/js/main.f92fefa4.chunk.js",
+    "main.js.map": "/countries-with-color-theme-switcher/static/js/main.f92fefa4.chunk.js.map",
+    "runtime-main.js": "/countries-with-color-theme-switcher/static/js/runtime-main.4beffce5.js",
+    "runtime-main.js.map": "/countries-with-color-theme-switcher/static/js/runtime-main.4beffce5.js.map",
+    "static/js/2.b2ba4a89.chunk.js": "/countries-with-color-theme-switcher/static/js/2.b2ba4a89.chunk.js",
+    "static/js/2.b2ba4a89.chunk.js.map": "/countries-with-color-theme-switcher/static/js/2.b2ba4a89.chunk.js.map",
+    "index.html": "/countries-with-color-theme-switcher/index.html",
+    "static/css/main.85c10c5b.chunk.css.map": "/countries-with-color-theme-switcher/static/css/main.85c10c5b.chunk.css.map",
+    "static/js/2.b2ba4a89.chunk.js.LICENSE.txt": "/countries-with-color-theme-switcher/static/js/2.b2ba4a89.chunk.js.LICENSE.txt",
+    "static/media/general.css": "/countries-with-color-theme-switcher/static/media/NunitoSans-Regular.87d92665.ttf",
+    "static/media/all.min.css": "/countries-with-color-theme-switcher/static/media/fa-solid-900.eb1e9adc.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4beffce5.js",
+    "static/js/2.b2ba4a89.chunk.js",
+    "static/css/main.85c10c5b.chunk.css",
+    "static/js/main.f92fefa4.chunk.js"
+  ]
+}
